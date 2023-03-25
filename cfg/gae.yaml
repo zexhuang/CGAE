@@ -1,0 +1,23 @@
+# Dataset
+melb: data/MelbDataset/melb.pkl
+osm: data/BuildingDataset/building.pkl
+glyph: data/GlyphDataset/glyph.pkl
+
+train: data/GlyphDataset/train/glyph_train.pkl
+val: data/GlyphDataset/val/glyph_val.pkl
+test: data/GlyphDataset/test/glyph_test.pkl
+
+# Trainval config
+device: 'cuda'
+epoch: 100
+patience: 100
+lr: 0.0001
+w_decay: 0.0001
+batch: 32
+worker: 5
+
+# Model
+in_channels: 2
+hid_channels: 64
+aug: True
+ratio: 0.2
