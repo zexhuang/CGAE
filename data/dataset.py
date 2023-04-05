@@ -17,6 +17,7 @@ class PolygonDataset(Dataset):
                  dataset: Union[str, pathlib.Path, pd.DataFrame], 
                  ratio: float = 0.2,
                  transform=NormalizeScale()):
+        super().__init__()   
         # Dataframe
         if isinstance(dataset, str or pathlib.Path):
             df = pd.read_pickle(dataset) 
