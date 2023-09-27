@@ -32,4 +32,4 @@ python trainval.py
 
 To train and evaluate the baseline GAE, change ```aug: True``` to ```aug: False``` in ```cfg/gae.yaml```.
 
-Experiment results are implemented and demonstratd in ```exp/...```, where the quantitative results of models evaluated on the three polygon datasets can be found in ```exp/eval.ipynb```; and the qualitative retuls of models can be found in ```exp/retrieval_cgae.ipynb``` and ```exp/retrieval_gae.ipynb```.
+Experiment results are implemented and demonstrated in ```exp/...```, where the quantitative results of models evaluated on the three polygon datasets can be found in ```exp/eval.ipynb```; and the qualitative retuls of models can be found in ```exp/retrieval_cgae.ipynb``` and ```exp/retrieval_gae.ipynb```.
