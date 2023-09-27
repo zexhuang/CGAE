@@ -1,6 +1,6 @@
 # Dataset
-melb: data/MelbDataset/melb.pkl
-osm: data/BuildingDataset/building.pkl
+melb: data/MelbourneDataset/melb.pkl
+osm: data/OSMDataset/osm.pkl
 glyph: data/GlyphDataset/glyph.pkl
 
 train: data/GlyphDataset/train/glyph_train.pkl
