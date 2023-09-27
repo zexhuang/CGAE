@@ -25,15 +25,15 @@ class PolygonDataset(Dataset):
             df = dataset
         # Graph feature                
         self.pos = list(df['pos'])
-        self.edge = list(df['edge_index'])
+        self.edge = list(df['contour'])
         self.ratio = ratio
         self.transform = transform
             
-    def __len__(self):
+    def len(self):
         """Return the number of samples in the custom dataset."""
         return len(self.pos)
 
-    def __getitem__(self, idx):
+    def get(self, idx):
         """Loda and return a data sample from the custom dataset at given index."""
         data = Data() 
         data.pos = torch.from_numpy(self.pos[idx].T).float()
