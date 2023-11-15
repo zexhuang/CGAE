@@ -1,11 +1,14 @@
 # Dataset
-melb: data/MelbourneDataset/melb.pkl
-osm: data/OSMDataset/osm.pkl
-glyph: data/GlyphDataset/glyph.pkl
-
 train: data/GlyphDataset/train/glyph_train.pkl
 val: data/GlyphDataset/val/glyph_val.pkl
 test: data/GlyphDataset/test/glyph_test.pkl
+
+glyph: data/GlyphDataset/glyph.pkl
+
+osm: data/OSMDataset/osm.pkl
+
+melb: data/MelbourneDataset/melb.pkl
+melb_sim: data/MelbourneDataset/melb_sim.pkl
 
 # Trainval config
 device: 'cuda'
