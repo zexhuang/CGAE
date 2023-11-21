@@ -3,7 +3,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 from torch.nn import PReLU
-from torch_geometric.nn import LayerNorm
+from torch_geometric.nn import LayerNorm, MLP
 from torch_geometric.nn import (GCNConv, GINConv, 
                                 EdgeConv, Linear)
 
@@ -143,6 +143,36 @@ class GAE(nn.Module):
         return adj.sigmoid().fill_diagonal_(0), z
     
     
+class NUFTAE(nn.Module):
+    def __init__(
+        self, 
+        in_channels: int, 
+        hid_channels: int):
+        super(NUFTAE, self).__init__()   
+        self.E = MLP([in_channels, 
+                      hid_channels, 
+                      hid_channels // 2,
+                      hid_channels // 4], 
+                      dropout=0.25,
+                      plain_last=True)
+        
+        self.D = MLP([hid_channels // 4, 
+                      hid_channels // 2, 
+                      hid_channels,
+                      in_channels], 
+                      dropout=0.25,
+                      plain_last=True)
+        
+    def _rec_loss(self, z, batch, x):
+        loss = nn.MSELoss()
+        z = self.D(z, batch)
+        return loss(z, x)
+        
+    def encoder(self, x, batch):            
+        z = self.E(x, batch)
+        return z
+    
+    
 import yaml
 from pathlib import Path
 from typing import Union
@@ -170,3 +200,6 @@ def build_model(cfg: Union[str, Path, dict]):
             hid_channels=cfg['hid_channels'],
             conv=EdgeBlock
             )
+    elif cfg['nn'] == 'nuft':
+        return NUFTAE(in_channels=cfg['in_channels'], 
+                      hid_channels=cfg['hid_channels'])
