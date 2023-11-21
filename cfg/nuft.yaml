@@ -21,6 +21,6 @@ worker: 5
 
 # Model
 in_channels: 288
-hid_channels: 256
+hid_channels: 64
 res: 16
 norm: l2
