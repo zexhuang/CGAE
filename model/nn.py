@@ -151,13 +151,13 @@ class NUFTAE(nn.Module):
         super(NUFTAE, self).__init__()   
         self.E = MLP([in_channels, 
                       hid_channels, 
-                      hid_channels // 2,
-                      hid_channels // 4], 
+                      hid_channels,
+                      hid_channels], 
                       dropout=0.25,
                       plain_last=True)
         
-        self.D = MLP([hid_channels // 4, 
-                      hid_channels // 2, 
+        self.D = MLP([hid_channels, 
+                      hid_channels, 
                       hid_channels,
                       in_channels], 
                       dropout=0.25,
