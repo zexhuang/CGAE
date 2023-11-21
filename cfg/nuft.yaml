@@ -1,0 +1,26 @@
+# Dataset
+train: data/GlyphDataset/train/glyph_train.pkl
+val: data/GlyphDataset/val/glyph_val.pkl
+test: data/GlyphDataset/test/glyph_test.pkl
+
+glyph: data/GlyphDataset/glyph.pkl
+
+osm: data/OSMDataset/osm.pkl
+
+melb: data/MelbourneDataset/melb.pkl
+melb_sim: data/MelbourneDataset/melb_sim.pkl
+
+# Trainval config
+device: 'cuda'
+epoch: 100
+patience: 100
+lr: 0.0001
+w_decay: 0.0001
+batch: 32
+worker: 5
+
+# Model
+in_channels: 288
+hid_channels: 256
+res: 16
+norm: l2
