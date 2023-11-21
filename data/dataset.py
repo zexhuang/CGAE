@@ -91,7 +91,13 @@ class NUFTDataset(object):
         for id, geom in enumerate(tqdm(self.geoms)):
             P = wkt.loads(geom)
             V, E = poly2ve(P)
+            # Rescale to (-1, -1)
+            V = V - V.mean(axis=-2, keepdims=True)
+            scale = (1 / np.absolute(V).max()) * 0.999999
+            V *= scale
+            # Random Translation
             V += 1e-6*np.random.rand(*V.shape)
+            
             V = torch.tensor(V, dtype=torch.float64, requires_grad=False)
             E = torch.LongTensor(E)
             D = torch.ones(E.shape[0], 1, dtype=torch.float64)
