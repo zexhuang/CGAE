@@ -48,8 +48,7 @@ Additionally, we have added non ML-based benchmarks: [Turning Function](https://
 
 ### Reference
 
-  
-```
+```text
 @article{mai2023towards,
   title={Towards general-purpose representation learning of polygonal geometries},
   author={Mai, Gengchen and Jiang, Chiyu and Sun, Weiwei and Zhu, Rui and Xuan, Yao and Cai, Ling and Janowicz, Krzysztof and Ermon, Stefano and Lao, Ni},
