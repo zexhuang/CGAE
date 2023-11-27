@@ -27,9 +27,72 @@ Model architecture of CGAE. Inputs: vertex coordinates of polygon geometries are
 The proposed CGAE are trained and evaluated by default on dataset Glyph Polygons via
 
 ```python
-python trainval.py
+python trainval_gae.py
 ```
 
 To train and evaluate the baseline GAE, change ```aug: True``` to ```aug: False``` in ```cfg/gae.yaml```.
 
 Experiment results are implemented and demonstrated in ```exp/...```, where the quantitative results of models evaluated on the three polygon datasets can be found in ```exp/eval.ipynb```; and the qualitative retuls of models can be found in ```exp/retrieval_cgae.ipynb``` and ```exp/retrieval_gae.ipynb```.
+
+## Update
+
+We have added new ML-based benchmark [NUFT](https://github.com/gengchenmai/polygon_encoder) from **Mai et al.**, which is based on [DDSL](https://github.com/maxjiang93/DDSL) from **Jiang et al.** to the experiments of CGAE. Additionally, to train and evlaute [NUFT](https://github.com/gengchenmai/polygon_encoder), run
+
+```python
+python trainval_nuft.py
+```
+
+Quantitative results of [NUFT](https://github.com/gengchenmai/polygon_encoder) is recorded in ```exp/eval_nuft.ipynb```, which are tested on Glyph, OSM and Melbourne datasets. Polygon retrieval \(qualitative\) results of [NUFT](https://github.com/gengchenmai/polygon_encoder) are shown in ```exp/retrieval_nuft.ipynb```.
+
+Additionally, we have added non ML-based benchmarks: [Turning Function](https://pypi.org/project/turning-function/) and [Procrustes](https://docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.procrustes.html) to experiments as reference. Qualitative results of methods are shown in  ```exp/retrieval_turning.ipynb``` and  ```exp/retrieval_procrustes.ipynb```, respectively.
+
+### Reference
+
+  
+```
+@article{mai2023towards,
+  title={Towards general-purpose representation learning of polygonal geometries},
+  author={Mai, Gengchen and Jiang, Chiyu and Sun, Weiwei and Zhu, Rui and Xuan, Yao and Cai, Ling and Janowicz, Krzysztof and Ermon, Stefano and Lao, Ni},
+  journal={GeoInformatica},
+  volume={27},
+  number={2},
+  pages={289--340},
+  year={2023},
+  publisher={Springer}
+}
+
+@InProceedings{Jiang_2019_ICCV,
+author = {Jiang, Chiyu "Max" and Lansigan, Dana and Marcus, Philip and Niessner, Matthias},
+title = {DDSL: Deep Differentiable Simplex Layer for Learning Geometric Signals},
+booktitle = {The IEEE International Conference on Computer Vision (ICCV)},
+month = {October},
+year = {2019}
+}
+
+@inproceedings{jiang2018convolutional,
+title={Convolutional Neural Networks on Non-uniform Geometrical Signals Using Euclidean Spectral Transformation},
+author={Chiyu Max Jiang and Dequan Wang and Jingwei Huang and Philip Marcus and Matthias Niessner},
+booktitle={International Conference on Learning Representations},
+year={2019},
+url={https://openreview.net/forum?id=B1G5ViAqFm},
+}
+
+@techreport{arkin1989efficiently,
+  title={An efficiently computable metric for comparing polygonal shapes},
+  author={Arkin, Esther M and Chew, L Paul and Huttenlocher, Daniel P and Kedem, Klara and Mitchell, Joseph SB},
+  year={1989},
+  institution={Cornell University Operations Research and Industrial Engineering}
+}
+
+@article{goodall1991procrustes,
+  title={Procrustes methods in the statistical analysis of shape},
+  author={Goodall, Colin},
+  journal={Journal of the Royal Statistical Society: Series B (Methodological)},
+  volume={53},
+  number={2},
+  pages={285--321},
+  year={1991},
+  publisher={Wiley Online Library}
+}
+
+```
