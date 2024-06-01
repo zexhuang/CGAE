@@ -6,14 +6,14 @@ Retrieval of polygon geometries with similar shapes from maps is a challenging g
 
 ## Dataset(s)
 
-Glyph Polygons
+(Synthetic) Glyph Polygons
 ![alt text](figs/glyph_sample.png)
 
-[OSM Buildings](http://doi.org/10.6084/m9.figshare.11742507)
+[(Controlled) OSM Buildings](http://doi.org/10.6084/m9.figshare.11742507)
 ![alt text](figs/OSM_sample_o.png)
 ![alt text](figs/OSM_sample_r.png)
 
-[Melbourne Footprints](https://data.melbourne.vic.gov.au/explore/dataset/2020-building-footprints/table/)
+[(Uncontrolled) Melbourne Footprints](https://data.melbourne.vic.gov.au/explore/dataset/2020-building-footprints/table/)
 ![alt text](figs/melb.png)
 
 ## CGAE
