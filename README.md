@@ -1,4 +1,4 @@
-# Contrastive Graph Autoencoder for Geometric Polygon Retrieval from Building Datasets
+# Contrastive Graph Autoencoder for Shape-based Polygon Retrieval from Large Geometry Datasets
 
 ## Abstract
 
