@@ -95,3 +95,14 @@ url={https://openreview.net/forum?id=B1G5ViAqFm},
 }
 
 ```
+## Citation
+```
+@article{huang2024contrastive,
+  title={Contrastive Graph Autoencoder for Shape-based Polygon Retrieval from Large Geometry Datasets},
+  author={Zexian Huang and Kourosh Khoshelham and Martin Tomko},
+  journal={Transactions on Machine Learning Research},
+  issn={2835-8856},
+  year={2024},
+  url={https://openreview.net/forum?id=9fcZNAmnyh}
+}
+```
